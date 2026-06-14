@@ -457,12 +457,6 @@ function MobileContact() {
         >
           Связаться<br />со мной
         </p>
-        <p
-          className="text-[#ded8cb]/50 leading-relaxed"
-          style={{ ...INTER, fontWeight: 500, fontSize: "clamp(12px,3.2vw,15px)" }}
-        >
-          Вы можете нажать кнопки,<br />чтобы написать
-        </p>
       </div>
       <div className="flex gap-4 w-full max-w-[360px] px-2 animate-slide-up delay-150 justify-center">
         <a
