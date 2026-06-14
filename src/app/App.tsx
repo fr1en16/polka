@@ -700,8 +700,136 @@ function MobileApp() {
   );
 }
 
+// ── Preloading Configuration ──────────────────────────────────────────────────
+const IMAGES_TO_PRELOAD = [
+  imgAboutPhoto,
+  imgLukoilScreenshot,
+  imgPumaLogo,
+  imgPumaScreenshot,
+  imgPumaG1,
+  imgPumaG2,
+  imgPumaG3,
+  imgDiskokrasScreenshot,
+  imgNscomLogo,
+  imgNscomScreenshot,
+  imgSankariLogo,
+  imgSankariScreenshot,
+  imgMotoScreenshot,
+  imgLogisticScreenshot
+];
+
+const LOADING_STATUSES = [
+  { max: 12, text: "Включаем прожекторы..." },
+  { max: 25, text: "Гладим шнурки на кроссовках Puma..." },
+  { max: 38, text: "Проверяем уровень масла в Лукойле..." },
+  { max: 50, text: "Подкачиваем колеса у мотоциклов..." },
+  { max: 63, text: "Наводим эстетику в пикселях..." },
+  { max: 75, text: "Заряжаем видеоролики SMM-магией..." },
+  { max: 88, text: "Сдуваем пылинки со скриншотов..." },
+  { max: 97, text: "Договариваемся с алгоритмами Instagram..." },
+  { max: 100, text: "Всё готово! Открываем двери..." }
+];
+
 // ── Root ──────────────────────────────────────────────────────────────────────
 export default function App() {
   const w = useViewport();
-  return w < 768 ? <MobileApp /> : <DesktopApp />;
+  const [progress, setProgress] = useState(0);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [isFading, setIsFading] = useState(false);
+
+  useEffect(() => {
+    let loadedCount = 0;
+    const totalImages = IMAGES_TO_PRELOAD.length;
+    let fontsLoaded = false;
+
+    const startTime = Date.now();
+    const minDuration = 3200; // 3.2 seconds minimum to display labels
+    const maxDuration = 5000; // 5 seconds maximum safety timeout
+
+    const checkCompletion = () => {
+      const timeElapsed = Date.now() - startTime;
+      const realLoadProgress = ((loadedCount + (fontsLoaded ? 1 : 0)) / (totalImages + 1)) * 100;
+
+      setProgress((prev) => {
+        if ((loadedCount === totalImages && fontsLoaded && timeElapsed >= minDuration) || timeElapsed >= maxDuration) {
+          return 100;
+        }
+
+        const timeProgress = (timeElapsed / minDuration) * 100;
+        let nextProgress = prev;
+
+        if (loadedCount === totalImages && fontsLoaded) {
+          nextProgress = Math.min(100, prev + 2.5);
+        } else {
+          const target = Math.min(90, Math.max(timeProgress, realLoadProgress));
+          if (prev < target) {
+            nextProgress = prev + (target - prev) * 0.08;
+          }
+        }
+
+        return Math.min(100, Math.max(prev, nextProgress));
+      });
+    };
+
+    const interval = setInterval(checkCompletion, 30);
+
+    IMAGES_TO_PRELOAD.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+      img.onload = () => { loadedCount++; };
+      img.onerror = () => { loadedCount++; };
+    });
+
+    const docAny = document as any;
+    if (docAny.fonts && docAny.fonts.ready) {
+      docAny.fonts.ready.then(() => {
+        fontsLoaded = true;
+      }).catch(() => {
+        fontsLoaded = true;
+      });
+    } else {
+      fontsLoaded = true;
+    }
+
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    if (progress >= 100) {
+      setIsFading(true);
+      const timeout = setTimeout(() => {
+        setIsLoaded(true);
+      }, 600);
+      return () => clearTimeout(timeout);
+    }
+  }, [progress]);
+
+  const currentStatus = LOADING_STATUSES.find((s) => progress <= s.max)?.text || "Всё готово! Открываем двери...";
+
+  return (
+    <>
+      {!isLoaded && (
+        <div
+          className={`fixed inset-0 z-[9999] bg-[#0c0c0c] flex flex-col items-center justify-center text-[#ded8cb] select-none transition-opacity duration-500 ease-out ${
+            isFading ? "opacity-0 pointer-events-none" : "opacity-100"
+          }`}
+        >
+          <div className="text-xs uppercase tracking-[0.2em] mb-4 text-[#ded8cb]/40 animate-pulse" style={INTER}>
+            Портфолио SMM-специалиста
+          </div>
+          <div className="text-[120px] font-bold leading-none tracking-tighter mb-4 text-[#baff3b] select-none" style={IMPACT}>
+            {Math.floor(progress)}%
+          </div>
+          <div className="w-[280px] h-[3px] bg-[#ded8cb]/15 rounded-full overflow-hidden mb-6">
+            <div className="h-full bg-[#baff3b] transition-all duration-100 ease-out" style={{ width: `${progress}%` }} />
+          </div>
+          <div className="text-sm font-medium text-center text-[#ded8cb]/80 max-w-[320px] min-h-[40px] px-4 transition-all duration-300" style={INTER}>
+            {currentStatus}
+          </div>
+        </div>
+      )}
+      {w < 768 ? <MobileApp /> : <DesktopApp />}
+    </>
+  );
 }
+
