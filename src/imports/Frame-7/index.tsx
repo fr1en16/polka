@@ -1,6 +1,6 @@
-import img1 from "./673cc019bebd12261cf643673fe573db9dd637ec.png";
-import img2 from "./c7cf3708bd008755fbfb1cd314dbbcfee66823e5.png";
-import img3 from "./972cb32632f7d3b20210777fd2046f72e3d2dc55.png";
+import img1 from "./673cc019bebd12261cf643673fe573db9dd637ec.webp";
+import img2 from "./c7cf3708bd008755fbfb1cd314dbbcfee66823e5.webp";
+import img3 from "./972cb32632f7d3b20210777fd2046f72e3d2dc55.webp";
 
 function Frame1() {
   return (

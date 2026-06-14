@@ -1,6 +1,6 @@
 import svgPaths from "./svg-szlo7w972q";
-import imgImage from "./e6abc99856300b9d7298425d0514afbdc0e8b065.png";
-import imgScreenshot202509271918391 from "./6438b05caee0f7fea82384c1785abe6547b6b3ca.png";
+import imgImage from "./e6abc99856300b9d7298425d0514afbdc0e8b065.webp";
+import imgScreenshot202509271918391 from "./6438b05caee0f7fea82384c1785abe6547b6b3ca.webp";
 
 function Frame1() {
   return (

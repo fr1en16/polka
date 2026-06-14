@@ -1,4 +1,4 @@
-import imgVector from "./437ba606640120550a74075f9a9db980c195cada.png";
+import imgVector from "./437ba606640120550a74075f9a9db980c195cada.webp";
 
 export default function Frame() {
   return (

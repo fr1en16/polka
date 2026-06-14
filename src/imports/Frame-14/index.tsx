@@ -1,5 +1,5 @@
 import svgPaths from "./svg-hrwlb7lw6e";
-import imgScreenshot202509271918391 from "./92f39cc0318b0f3ecd44fc6f4ff3cbfe3e07896c.png";
+import imgScreenshot202509271918391 from "./92f39cc0318b0f3ecd44fc6f4ff3cbfe3e07896c.webp";
 
 function Frame1() {
   return (

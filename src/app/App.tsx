@@ -21,20 +21,21 @@ import LogisticFrame from "@/imports/Frame-14/index";
 import ContactFrame from "@/imports/Frame-15/index";
 
 // ── Mobile image imports ──────────────────────────────────────────────────────
-import imgAboutPhoto from "@/imports/Frame-1/437ba606640120550a74075f9a9db980c195cada.png";
-import imgLukoilScreenshot from "@/imports/Frame-4/316f2a05f1b8e51c9eb01203f06930e023dbfe04.png";
-import imgPumaLogo from "@/imports/Frame-6/958e63ec4f23278dddfc41ab7dc54938e8103cf6.png";
-import imgPumaScreenshot from "@/imports/Frame-6/316f2a05f1b8e51c9eb01203f06930e023dbfe04.png";
-import imgPumaG1 from "@/imports/Frame-7/673cc019bebd12261cf643673fe573db9dd637ec.png";
-import imgPumaG2 from "@/imports/Frame-7/c7cf3708bd008755fbfb1cd314dbbcfee66823e5.png";
-import imgPumaG3 from "@/imports/Frame-7/972cb32632f7d3b20210777fd2046f72e3d2dc55.png";
-import imgDiskokrasScreenshot from "@/imports/Frame-10/538283d76957e6dee3d4566f655e9217a8c749de.png";
-import imgNscomLogo from "@/imports/Frame-11/044f2528992789c9c5cbafe99f8f4fdebc30e0c6.png";
-import imgNscomScreenshot from "@/imports/Frame-11/d15427f5216926d3417cea79cbc91dc877772601.png";
-import imgSankariLogo from "@/imports/Frame-12/e6abc99856300b9d7298425d0514afbdc0e8b065.png";
-import imgSankariScreenshot from "@/imports/Frame-12/6438b05caee0f7fea82384c1785abe6547b6b3ca.png";
-import imgMotoScreenshot from "@/imports/Frame-13/c41dfa21052148252a8632157da032cbf07edf95.png";
-import imgLogisticScreenshot from "@/imports/Frame-14/92f39cc0318b0f3ecd44fc6f4ff3cbfe3e07896c.png";
+import imgAboutPhoto from "@/imports/Frame-1/437ba606640120550a74075f9a9db980c195cada.webp";
+import imgLukoilScreenshot from "@/imports/Frame-4/316f2a05f1b8e51c9eb01203f06930e023dbfe04.webp";
+import imgPumaLogo from "@/imports/Frame-6/958e63ec4f23278dddfc41ab7dc54938e8103cf6.webp";
+import imgPumaScreenshot from "@/imports/Frame-6/316f2a05f1b8e51c9eb01203f06930e023dbfe04.webp";
+import imgPumaG1 from "@/imports/Frame-7/673cc019bebd12261cf643673fe573db9dd637ec.webp";
+import imgPumaG2 from "@/imports/Frame-7/c7cf3708bd008755fbfb1cd314dbbcfee66823e5.webp";
+import imgPumaG3 from "@/imports/Frame-7/972cb32632f7d3b20210777fd2046f72e3d2dc55.webp";
+import imgDiskokrasScreenshot from "@/imports/Frame-10/538283d76957e6dee3d4566f655e9217a8c749de.webp";
+import imgNscomLogo from "@/imports/Frame-11/044f2528992789c9c5cbafe99f8f4fdebc30e0c6.webp";
+import imgNscomScreenshot from "@/imports/Frame-11/d15427f5216926d3417cea79cbc91dc877772601.webp";
+import imgSankariLogo from "@/imports/Frame-12/e6abc99856300b9d7298425d0514afbdc0e8b065.webp";
+import imgSankariScreenshot from "@/imports/Frame-12/6438b05caee0f7fea82384c1785abe6547b6b3ca.webp";
+import imgMotoScreenshot from "@/imports/Frame-13/c41dfa21052148252a8632157da032cbf07edf95.webp";
+import imgLogisticScreenshot from "@/imports/Frame-14/92f39cc0318b0f3ecd44fc6f4ff3cbfe3e07896c.webp";
+
 
 // ── Mobile video imports ──────────────────────────────────────────────────────
 import videoLukoilFinal from "@/assets/lukoil/Лукойл Финал.webm";

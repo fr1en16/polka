@@ -1,7 +1,7 @@
 import svgPaths from "./svg-des8l8z8hk";
-import imgImage2138 from "./958e63ec4f23278dddfc41ab7dc54938e8103cf6.png";
-import imgScreenshot202509271918391 from "./316f2a05f1b8e51c9eb01203f06930e023dbfe04.png";
-import imgScreenshot202509271918392 from "./14511b728626cf952cf425287792dd06055ea5df.png";
+import imgImage2138 from "./958e63ec4f23278dddfc41ab7dc54938e8103cf6.webp";
+import imgScreenshot202509271918391 from "./316f2a05f1b8e51c9eb01203f06930e023dbfe04.webp";
+import imgScreenshot202509271918392 from "./14511b728626cf952cf425287792dd06055ea5df.webp";
 
 function Frame1() {
   return (

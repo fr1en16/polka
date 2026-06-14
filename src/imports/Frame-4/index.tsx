@@ -1,5 +1,5 @@
 import svgPaths from "./svg-vrilrv3izz";
-import imgScreenshot202509271918391 from "./316f2a05f1b8e51c9eb01203f06930e023dbfe04.png";
+import imgScreenshot202509271918391 from "./316f2a05f1b8e51c9eb01203f06930e023dbfe04.webp";
 import { imgGroup } from "./svg-2cazp";
 
 function Group1() {
